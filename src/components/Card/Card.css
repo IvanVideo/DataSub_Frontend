@@ -41,14 +41,20 @@
 .card__box {
     width: 460px;
     display: flex;
+    align-items: center;
     position: relative;
 }
 
 .card__date {
-    padding: 15px;
-    width: 70px;
+    display: flex;
+    align-items: center;
+    width: 30px;
     height: 40px;
     box-sizing: border-box;
+}
+
+.card__date:first-child {
+    justify-content: flex-end;
 }
 
 .card__slash {

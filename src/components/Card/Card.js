@@ -13,7 +13,9 @@ function Card({ cardValues }) {
             <div className='card__container'>
                 <label className='card__expiration-date'>Expiration Date</label>
                 <div className='card__box'>
-                    <label placeholder='MM/YYYY' className='card__date' value={cardValues.date}>{cardValues.date ? cardValues.date : 'MM/YYYY'}</label>
+                    <label placeholder='MM/' className='card__date' value={cardValues.dateM}>{cardValues.dateM ? cardValues.dateM : 'MM'}</label>
+                    /
+                    <label placeholder='YYYY' className='card__date' value={cardValues.dateY}>{cardValues.dateY ? cardValues.dateY : 'YYYY'}</label>
                     <label placeholder='CVC' className='card__cvc' value={cardValues.CVV}>{cardValues.CVV ? cardValues.CVV : 'CVC'}</label>
                 </div>
             </div>

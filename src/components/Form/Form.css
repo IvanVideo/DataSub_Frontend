@@ -17,6 +17,19 @@
     margin-bottom: 30px;
 }
 
+.form__container {
+    display: flex;
+}
+
+.form__date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__date-box:first-child {
+    margin-right: 30px;
+}
+
 .form__input:hover {
     border: 1px solid #aeaeae;
 }
@@ -29,6 +42,10 @@
 .form__error {
     font-size: 10px;
     color: red;
+}
+
+.error {
+    width: 120px;
 }
 
 .form__date {

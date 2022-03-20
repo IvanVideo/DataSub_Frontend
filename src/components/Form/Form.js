@@ -16,6 +16,20 @@ function Form({ getCardValues, createCard }) {
         setIsValid(target.closest("form").checkValidity());
     };
 
+    // сбор значений инпутов даты
+    const handleChangeDate = (e) => {
+        if (e.target.name === 'dateM' && e.target.value < 13) {
+            setValues({ ...values, [e.target.name]: e.target.value.replace(/\D/g, '') });
+            setErrors({ ...errors, [e.target.name]: e.target.validationMessage });
+            setIsValid(e.target.closest("form").checkValidity());
+        }
+        if (e.target.name === 'dateY' && e.target.value < 2025) {
+            setValues({ ...values, [e.target.name]: e.target.value.replace(/\D/g, '') });
+            setErrors({ ...errors, [e.target.name]: e.target.validationMessage });
+            setIsValid(e.target.closest("form").checkValidity());
+        }
+    }
+
     // сабмитим форму
     const handleSubmitFrom = (e) => {
         e.preventDefault();
@@ -24,7 +38,7 @@ function Form({ getCardValues, createCard }) {
 
     useEffect(() => {
         getCardValues(values)
-    }, [values])
+    }, [values, errors])
 
     return (
         <form className='form' onSubmit={handleSubmitFrom}>
@@ -44,17 +58,32 @@ function Form({ getCardValues, createCard }) {
             <div className='form__box'>
                 <label className='form__label'>Expiration Date</label>
                 <div className='form__date'>
-                    <input
-                        name='date'
-                        placeholder='MM/YYYY'
-                        className='form__input form__input-medium input__date'
-                        minLength={7}
-                        maxLength={7}
-                        value={values.date}
-                        onChange={handleChange}
-                        required />
-                    <span className='form__error'>{errors.date}</span>
-
+                    <div className='form__container'>
+                        <div className='form__date-box'>
+                            <input
+                                name='dateM'
+                                placeholder='MM'
+                                className='form__input form__input-small input__date'
+                                minLength={2}
+                                maxLength={2}
+                                value={values.dateM}
+                                onChange={handleChangeDate}
+                                required />
+                            <span className='form__error error'>{errors.dateM}</span>
+                        </div>
+                        <div className='form__date-box'>
+                            <input
+                                name='dateY'
+                                placeholder='YYYY'
+                                className='form__input form__input-medium input__date'
+                                minLength={4}
+                                maxLength={4}
+                                value={values.dateY}
+                                onChange={handleChangeDate}
+                                required />
+                            <span className='form__error error'>{errors.dateY}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='form__box'>

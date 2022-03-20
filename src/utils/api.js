@@ -20,7 +20,7 @@ class MainApi {
             },
             body: JSON.stringify({
                 "CardNumber": data.number,
-                "ExpDate": data.date,
+                "ExpDate": `${data.dateM}/${data.dateY}`,
                 "Cvv": data.CVV,
                 "Amount": data.amount,
             })

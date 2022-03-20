@@ -10,6 +10,7 @@ function App() {
   const [resBack, setResBack] = React.useState([]); // ответ сервера
   const [resStatus, setResStatus] = React.useState(false); // состояние ответа от сервера для отображения
 
+
   // Получаем значение номера карты и записываем в стейт
   const getCardValues = (data) => {
     setCardValues(data)
