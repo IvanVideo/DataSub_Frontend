@@ -2,7 +2,7 @@
     width: 500px;
     height: 280px;
     border-radius: 30px;
-    background-color: #6695eb;
+    background-color: #38c86c;
     padding: 20px;
     box-sizing: border-box;
     position: relative;
@@ -61,11 +61,13 @@
 .card__cvc {
     display: flex;
     align-items: center;
+    justify-content: center;
     position: absolute;
     right: 0;
     width: 70px;
     height: 40px;
     box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .first {

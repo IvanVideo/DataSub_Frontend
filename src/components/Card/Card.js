@@ -1,6 +1,5 @@
 import './Card.css';
 import logo from '../../img/logo.png';
-import { useEffect } from 'react';
 
 function Card({ cardValues }) {
 
@@ -9,7 +8,7 @@ function Card({ cardValues }) {
             <img className='card1__logo' src={logo} />
             <div className='card__container first'>
                 <label>Expiration Date</label>
-                <label placeholder='Card Number' className='card__number'>{cardValues.number ? cardValues.number : '**** **** **** ****'}</label>
+                <label placeholder='Card Number' className='card__number'>{cardValues.number ? cardValues.number : 'XXXX XXXX XXXX XXXX'}</label>
             </div>
             <div className='card__container'>
                 <label className='card__expiration-date'>Expiration Date</label>
